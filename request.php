@@ -24,5 +24,6 @@
     if(isset($_GET['request'])) {
       $file = fopen("list.json", "r");
       echo file_get_contents('list.json');
+      fclose($file);
     }
 
