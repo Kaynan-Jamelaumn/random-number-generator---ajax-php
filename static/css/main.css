@@ -1,0 +1,22 @@
+:root {
+  --green: #00FA9A;
+  --yellow: #FFFF00;
+  --red: #FF0000;
+}
+
+body {
+  background-color: #161614 !important;
+  color: #00f2fa !important;
+}
+
+.green {
+  color: var(--green)
+}
+
+.red {
+  color: var(--red)
+}
+
+.yellow {
+  color: var(--yellow);
+}
