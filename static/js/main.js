@@ -44,7 +44,6 @@ document.getElementById('save').addEventListener("click", function () {
   let number = null
   try {
     number = document.getElementById('registred-result').innerHTML
-    window.alert("Número Salvo")
   } catch {
     $.ajax({
       type: 'GET',
@@ -64,6 +63,9 @@ document.getElementById('save').addEventListener("click", function () {
     url: "./request.php",
     data: {
       number: number
+    },
+    success: function () {    
+      window.alert("Número Salvo")
     }
   })
 
