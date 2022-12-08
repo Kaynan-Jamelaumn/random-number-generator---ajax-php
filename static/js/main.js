@@ -52,7 +52,7 @@ document.getElementById('save').addEventListener("click", function () {
       url: "./request.php",
       data: { 'generateNumber': true },
       success: function (response) {
-        number = response
+        number = JSON.parse(response)
 
         showNumber(color(number), number)
       }
