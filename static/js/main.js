@@ -2,11 +2,14 @@
 /*
 let randomNumber = () => Math.round(Math.random() * (100))
 */
+const childKiller = (tag) => {
+  while (tag.firstChild) {
+    tag.removeChild(tag.firstChild)
+  }
+}
 function showNumber(classname, number) {
   const result = document.getElementById('result')
-  while (result.firstChild) {
-    result.removeChild(result.lastChild)
-  }
+  childKiller(result)
   const p = document.createElement("p")
   p.setAttribute("class", classname)
   p.setAttribute("id", "registred-result")
@@ -22,7 +25,6 @@ const color = (number) => {
     return "yellow"
   }
   else {
-
     return "red"
   }
 }
@@ -64,7 +66,7 @@ document.getElementById('save').addEventListener("click", function () {
     data: {
       number: number
     },
-    success: function () {    
+    success: function () {
       window.alert("Número Salvo")
     }
   })
@@ -79,9 +81,7 @@ document.getElementById('request').addEventListener("click", function () {
     success: function (response) {
       const bottom = document.getElementById('bottom')
       if (!response) {
-        while (bottom.firstChild) {
-          bottom.removeChild(bottom.lastChild)
-        }
+        childKiller(bottom)
         const h2 = document.createElement("h2")
         h2.setAttribute("class", "h1")
         h2.innerHTML = "Não existem números salvos no servidor"
@@ -91,9 +91,7 @@ document.getElementById('request').addEventListener("click", function () {
       numbers = JSON.parse(response)
       const table = document.createElement("table")
       table.setAttribute("class", "m-auto text-center h3")
-      while (bottom.firstChild) {
-        bottom.removeChild(bottom.lastChild)
-      }
+      childKiller(bottom)
 
       const pGreen = document.createElement("p")
       pGreen.setAttribute("class", "green h1")
