@@ -3,11 +3,11 @@
 let randomNumber = () => Math.round(Math.random() * (100))
 */
 function showNumber(classname, number) {
-  let result = document.getElementById('result')
+  const result = document.getElementById('result')
   while (result.firstChild) {
     result.removeChild(result.lastChild)
   }
-  let p = document.createElement("p")
+  const p = document.createElement("p")
   p.setAttribute("class", classname)
   p.setAttribute("id", "registred-result")
   p.innerHTML = number
