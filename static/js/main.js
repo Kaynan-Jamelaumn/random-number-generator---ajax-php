@@ -89,24 +89,24 @@ document.getElementById('request').addEventListener("click", function () {
         return
       }
       numbers = JSON.parse(response)
-      const table = document.createElement("table")
-      table.setAttribute("class", "m-auto text-center h3")
+      const div  = document.createElement("div")
+      div.setAttribute("class", "m-auto text-center h3")
       childKiller(bottom)
 
       const pGreen = document.createElement("p")
       pGreen.setAttribute("class", "green h1")
       pGreen.innerHTML = "Verde:"
-      table.appendChild(pGreen)
+      div.appendChild(pGreen)
 
       const pYellow = document.createElement("p")
       pYellow.setAttribute("class", "yellow h1")
       pYellow.innerHTML = "Amarelo:"
-      table.appendChild(pYellow)
+      div.appendChild(pYellow)
 
       const pRed = document.createElement("p")
       pRed.setAttribute("class", "red h1")
       pRed.innerHTML = "Vermelho: "
-      table.appendChild(pRed)
+      div.appendChild(pRed)
 
 
       const pAll = document.createElement("p")
@@ -129,8 +129,8 @@ document.getElementById('request').addEventListener("click", function () {
         pAll.innerHTML += " " + numbers[key]
         //console.log(numbers[key]);
       }
-      table.appendChild(pAll)
-      bottom.append(table)
+      div.appendChild(pAll)
+      bottom.append(div)
     }
   })
 })
